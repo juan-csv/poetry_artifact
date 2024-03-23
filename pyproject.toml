@@ -11,11 +11,13 @@ xgboost = "^2.0.3"
 category-encoders = "2.6.3"
 numpy = "^1.26.4"
 pandas = "^2.2.1"
-protobuf = "^5.26.0"
+protobuf = "^3.19"
 pydantic = "1.10.12"
 pyyaml = "6.0.1"
 scikit-learn = "^1.4.1.post1"
+apache-airflow = "2.7.2"
 apache-airflow-providers-docker = "^3.9.2"
+opentelemetry-proto = "^1.23.0"
 
 
 [build-system]
