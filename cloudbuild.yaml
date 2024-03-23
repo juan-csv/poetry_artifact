@@ -1,0 +1,24 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/testingv0001/xgboost_coupon_model", "."]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/testingv0001/xgboost_coupon_model"]
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "xgboost-coupon-model"
+      - "--image"
+      - "gcr.io/testingv0001/xgboost_coupon_model"
+      - "--region"
+      - "us-central1"
+      - "--allow-unauthenticated"
+
+images:
+  - "gcr.io/testingv0001/xgboost_coupon_model"
+
+options:
+  logging: CLOUD_LOGGING_ONLY

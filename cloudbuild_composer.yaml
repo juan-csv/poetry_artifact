@@ -1,0 +1,19 @@
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "composer"
+      - "environments"
+      - "update"
+      - "juan-composer"
+      - "--location"
+      - "us-central1"
+      - "--update-pypi-packages-from-file"
+      - "requirements.txt"
+
+
+gcloud composer environments update juan-composer --location us-central1 --update-pypi-packages-from-file requirements.txt
+
+gsutil -m cp -r \
+  airflow/dags/lifecycle_ml_example \
+  gs://us-central1-juan-composer-59dddb24-bucket/dags

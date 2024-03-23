@@ -1,0 +1,241 @@
+[2024-03-18 21:01:29,456] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-18T18:20:47.382372+00:00 [queued]>
+[2024-03-18 21:01:29,626] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-18T18:20:47.382372+00:00 [queued]>
+[2024-03-18 21:01:29,627] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-18 21:01:29,627] {taskinstance.py:1239} INFO - Starting attempt 1 of 4
+[2024-03-18 21:01:29,627] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-18 21:01:29,651] {taskinstance.py:1259} INFO - Executing <Task(_PythonDecoratedOperator): evaluate_model> on 2024-03-18 18:20:47.382372+00:00
+[2024-03-18 21:01:29,671] {standard_task_runner.py:52} INFO - Started process 82997 to run task
+[2024-03-18 21:01:29,693] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'evaluate_model', 'scheduled__2024-03-18T18:20:47.382372+00:00', '--job-id', '212', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmp29xethqm', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmprwt0dl5l']
+[2024-03-18 21:01:29,701] {standard_task_runner.py:77} INFO - Job 212: Subtask evaluate_model
+[2024-03-18 21:01:29,859] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-18T18:20:47.382372+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2024-03-18 21:01:29,981] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=evaluate_model
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-18T18:20:47.382372+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-18T18:20:47.382372+00:00
+[2024-03-18 21:01:29,985] {dag_ml_life_cycle.py:93} INFO - Getting gold data from ml_lifecycle_airflow/in-vehicle-coupon-recommendation_gold.csv ...
+[2024-03-18 21:01:58,163] {dag_ml_life_cycle.py:105} INFO - Downloading model from ml_lifecycle_airflow/artifacts/model.pkl ...
+[2024-03-18 21:13:35,495] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 416, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/ssl.py", line 1074, in _create
+    self.do_handshake()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/ssl.py", line 1343, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1112: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 385, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 336, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 186, in __call__
+    response = self.session.request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 532, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Read timed out. (read timeout=60)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/decorators/base.py", line 134, in execute
+    return_value = super().execute(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/dags/dag_ml_life_cycle.py", line 107, in evaluate_model_task
+    download_blob(bucket_name, path_save_model, "/tmp/model.pkl")
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/utils/f_gcs_storage.py", line 82, in download_blob
+    blob.download_to_filename(destination_file_name)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1302, in download_to_filename
+    self._handle_filename_and_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1178, in _handle_filename_and_download
+    self._prep_and_do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 4352, in _prep_and_do_download
+    self._do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1007, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 237, in consume
+    return _request_helpers.wait_and_retry(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 210, in retriable_request
+    result = transport.request(method, url, **request_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 537, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 230, in before_request
+    self._blocking_refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 193, in _blocking_refresh
+    self.refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/credentials.py", line 431, in refresh
+    ) = reauth.refresh_grant(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/reauth.py", line 332, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 215, in _token_endpoint_request_no_throw
+    request_succeeded, response_data, retryable_error = _perform_request()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 191, in _perform_request
+    response = request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Read timed out. (read timeout=60)
+[2024-03-18 21:13:35,569] {taskinstance.py:1267} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_ml_life_cycle, task_id=evaluate_model, execution_date=20240318T182047, start_date=20240319T020129, end_date=20240319T021335
+[2024-03-18 21:13:35,600] {standard_task_runner.py:89} ERROR - Failed to execute job 212 for task evaluate_model
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 416, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/ssl.py", line 1074, in _create
+    self.do_handshake()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/ssl.py", line 1343, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1112: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 385, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 336, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 186, in __call__
+    response = self.session.request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 532, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Read timed out. (read timeout=60)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 180, in _run_raw_task
+    ti._run_raw_task(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/decorators/base.py", line 134, in execute
+    return_value = super().execute(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/dags/dag_ml_life_cycle.py", line 107, in evaluate_model_task
+    download_blob(bucket_name, path_save_model, "/tmp/model.pkl")
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/utils/f_gcs_storage.py", line 82, in download_blob
+    blob.download_to_filename(destination_file_name)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1302, in download_to_filename
+    self._handle_filename_and_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1178, in _handle_filename_and_download
+    self._prep_and_do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 4352, in _prep_and_do_download
+    self._do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1007, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 237, in consume
+    return _request_helpers.wait_and_retry(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 210, in retriable_request
+    result = transport.request(method, url, **request_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 537, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 230, in before_request
+    self._blocking_refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 193, in _blocking_refresh
+    self.refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/credentials.py", line 431, in refresh
+    ) = reauth.refresh_grant(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/reauth.py", line 332, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 215, in _token_endpoint_request_no_throw
+    request_succeeded, response_data, retryable_error = _perform_request()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 191, in _perform_request
+    response = request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Read timed out. (read timeout=60)
+[2024-03-18 21:13:35,630] {local_task_job.py:154} INFO - Task exited with return code 1
+[2024-03-18 21:13:35,696] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

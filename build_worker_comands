@@ -1,0 +1,6 @@
+# build image 
+docker build -t gcr.io/testingv0001/worker_airflow -f Dockerfile_worker .
+
+
+# push to artifact registry
+docker push gcr.io/testingv0001/worker_airflow

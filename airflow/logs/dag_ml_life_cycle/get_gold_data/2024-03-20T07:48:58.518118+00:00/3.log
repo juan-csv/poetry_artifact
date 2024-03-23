@@ -1,0 +1,31 @@
+[2024-03-20 08:00:54,193] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.get_gold_data scheduled__2024-03-20T07:48:58.518118+00:00 [queued]>
+[2024-03-20 08:00:54,258] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.get_gold_data scheduled__2024-03-20T07:48:58.518118+00:00 [queued]>
+[2024-03-20 08:00:54,258] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-20 08:00:54,258] {taskinstance.py:1239} INFO - Starting attempt 3 of 4
+[2024-03-20 08:00:54,259] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-20 08:00:54,267] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): get_gold_data> on 2024-03-20 07:48:58.518118+00:00
+[2024-03-20 08:00:54,273] {standard_task_runner.py:52} INFO - Started process 14484 to run task
+[2024-03-20 08:00:54,280] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'get_gold_data', 'scheduled__2024-03-20T07:48:58.518118+00:00', '--job-id', '1159', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmphe8zzbla', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpyr7fbo0q']
+[2024-03-20 08:00:54,282] {standard_task_runner.py:77} INFO - Job 1159: Subtask get_gold_data
+[2024-03-20 08:00:54,325] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.get_gold_data scheduled__2024-03-20T07:48:58.518118+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2024-03-20 08:00:54,354] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=get_gold_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-20T07:48:58.518118+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-20T07:48:58.518118+00:00
+[2024-03-20 08:00:54,355] {data_preprocessing.py:34} INFO - Random error: 0.1521450946136822
+[2024-03-20 08:00:54,355] {data_preprocessing.py:38} INFO - Getting gold data
+[2024-03-20 08:00:54,356] {data_preprocessing.py:42} INFO - Getting raw data from ml_lifecycle_airflow/in-vehicle-coupon-recommendation.csv ...
+[2024-03-20 08:00:57,539] {data_preprocessing.py:89} INFO - Starting data preprocessing ...
+[2024-03-20 08:00:57,696] {data_preprocessing.py:150} INFO - Data preprocessing complete
+
+[2024-03-20 08:00:57,733] {data_preprocessing.py:168} INFO - Encoding features using hashing encoder ...
+[2024-03-20 08:01:35,069] {data_preprocessing.py:168} INFO - Encoding features using hashing encoder ...
+[2024-03-20 08:02:12,301] {data_preprocessing.py:63} INFO - Uploading preprocessed data to GCS ...
+[2024-03-20 08:02:21,261] {python.py:175} INFO - Done. Returned value was: True
+[2024-03-20 08:02:21,281] {taskinstance.py:1267} INFO - Marking task as SUCCESS. dag_id=dag_ml_life_cycle, task_id=get_gold_data, execution_date=20240320T074858, start_date=20240320T130054, end_date=20240320T130221
+[2024-03-20 08:02:21,328] {local_task_job.py:154} INFO - Task exited with return code 0
+[2024-03-20 08:02:21,349] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

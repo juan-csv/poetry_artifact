@@ -1,0 +1,130 @@
+[2024-03-18 22:10:52,249] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.get_gold_data scheduled__2024-03-18T21:58:39.086022+00:00 [queued]>
+[2024-03-18 22:10:52,422] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.get_gold_data scheduled__2024-03-18T21:58:39.086022+00:00 [queued]>
+[2024-03-18 22:10:52,423] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-18 22:10:52,423] {taskinstance.py:1239} INFO - Starting attempt 1 of 4
+[2024-03-18 22:10:52,423] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-18 22:10:52,447] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): get_gold_data> on 2024-03-18 21:58:39.086022+00:00
+[2024-03-18 22:10:52,467] {standard_task_runner.py:52} INFO - Started process 96416 to run task
+[2024-03-18 22:10:52,490] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'get_gold_data', 'scheduled__2024-03-18T21:58:39.086022+00:00', '--job-id', '241', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpj9wgfm_v', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmphqwlam_m']
+[2024-03-18 22:10:52,499] {standard_task_runner.py:77} INFO - Job 241: Subtask get_gold_data
+[2024-03-18 22:10:52,664] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.get_gold_data scheduled__2024-03-18T21:58:39.086022+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2024-03-18 22:10:52,789] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=get_gold_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-18T21:58:39.086022+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-18T21:58:39.086022+00:00
+[2024-03-18 22:10:52,793] {data_preprocessing.py:34} INFO - Random error: 0.01451333245379649
+[2024-03-18 22:10:52,795] {data_preprocessing.py:38} INFO - Getting gold data
+[2024-03-18 22:10:52,797] {data_preprocessing.py:42} INFO - Getting raw data from ml_lifecycle_airflow/in-vehicle-coupon-recommendation.csv ...
+[2024-03-18 22:11:00,461] {data_preprocessing.py:89} INFO - Starting data preprocessing ...
+[2024-03-18 22:11:01,118] {data_preprocessing.py:150} INFO - Data preprocessing complete
+
+[2024-03-18 22:11:01,275] {data_preprocessing.py:168} INFO - Encoding features using hashing encoder ...
+[2024-03-18 22:11:42,338] {local_task_job.py:191} WARNING - The recorded hostname 1.0.0.127.in-addr.arpa does not match this instance's hostname MacBook-Pro-2.local
+[2024-03-18 22:11:42,354] {process_utils.py:120} INFO - Sending Signals.SIGTERM to group 96416. PIDs of all processes in the group: [96543, 96544, 96585, 96635, 96684, 96732, 96818, 96416]
+[2024-03-18 22:11:42,354] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 96416
+[2024-03-18 22:11:42,355] {taskinstance.py:1408} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-03-18 22:11:42,369] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/features/data_preprocessing.py", line 59, in get_gold_data
+    x_train_hashing = encode_features(x_train)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/features/data_preprocessing.py", line 173, in encode_features
+    hashing_ros_enc = hashing_ros_enc_instance.fit(X=x)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/category_encoders/utils.py", line 315, in fit
+    X_transformed = self.transform(X, override_return_df=True)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/sklearn/utils/_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/category_encoders/utils.py", line 488, in transform
+    X = self._transform(X)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/category_encoders/hashing.py", line 194, in _transform
+    process.start()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/popen_spawn_posix.py", line 62, in _launch
+    f.write(fp.getbuffer())
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1410, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-03-18 22:11:42,374] {taskinstance.py:1267} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_ml_life_cycle, task_id=get_gold_data, execution_date=20240318T215839, start_date=20240319T031052, end_date=20240319T031142
+[2024-03-18 22:11:42,381] {standard_task_runner.py:89} ERROR - Failed to execute job 241 for task get_gold_data
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 180, in _run_raw_task
+    ti._run_raw_task(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/features/data_preprocessing.py", line 59, in get_gold_data
+    x_train_hashing = encode_features(x_train)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/features/data_preprocessing.py", line 173, in encode_features
+    hashing_ros_enc = hashing_ros_enc_instance.fit(X=x)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/category_encoders/utils.py", line 315, in fit
+    X_transformed = self.transform(X, override_return_df=True)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/sklearn/utils/_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/category_encoders/utils.py", line 488, in transform
+    X = self._transform(X)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/category_encoders/hashing.py", line 194, in _transform
+    process.start()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/multiprocessing/popen_spawn_posix.py", line 62, in _launch
+    f.write(fp.getbuffer())
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1410, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-03-18 22:11:42,417] {process_utils.py:70} INFO - Process psutil.Process(pid=96416, status='terminated', exitcode=1, started='22:10:52') (96416) terminated with exit code 1
+[2024-03-18 22:11:42,418] {process_utils.py:70} INFO - Process psutil.Process(pid=96818, status='terminated', started='22:11:26') (96818) terminated with exit code None
+[2024-03-18 22:11:42,418] {process_utils.py:70} INFO - Process psutil.Process(pid=96543, status='terminated', started='22:11:01') (96543) terminated with exit code None
+[2024-03-18 22:11:42,418] {process_utils.py:70} INFO - Process psutil.Process(pid=96585, status='terminated', started='22:11:05') (96585) terminated with exit code None
+[2024-03-18 22:11:42,418] {process_utils.py:70} INFO - Process psutil.Process(pid=96684, status='terminated', started='22:11:13') (96684) terminated with exit code None
+[2024-03-18 22:11:42,418] {process_utils.py:70} INFO - Process psutil.Process(pid=96544, status='terminated', started='22:11:01') (96544) terminated with exit code None
+[2024-03-18 22:11:42,419] {process_utils.py:70} INFO - Process psutil.Process(pid=96635, status='terminated', started='22:11:09') (96635) terminated with exit code None
+[2024-03-18 22:11:42,419] {process_utils.py:70} INFO - Process psutil.Process(pid=96732, status='terminated', started='22:11:18') (96732) terminated with exit code None

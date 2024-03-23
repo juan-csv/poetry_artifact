@@ -1,0 +1,42 @@
+[2024-03-20 00:15:42,574] {processor.py:163} INFO - Started process (PID=33740) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:15:42,574] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2024-03-20 00:15:42,575] {logging_mixin.py:109} INFO - [2024-03-20 00:15:42,574] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:15:42,609] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:15:42,627] {logging_mixin.py:109} INFO - [2024-03-20 00:15:42,626] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:15:42,637] {logging_mixin.py:109} INFO - [2024-03-20 00:15:42,637] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2024-03-19T05:15:42.637265+00:00
+[2024-03-20 00:15:42,645] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py took 0.072 seconds
+[2024-03-20 00:24:48,214] {processor.py:163} INFO - Started process (PID=47553) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:24:48,215] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2024-03-20 00:24:48,215] {logging_mixin.py:109} INFO - [2024-03-20 00:24:48,215] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:24:48,249] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:24:48,266] {logging_mixin.py:109} INFO - [2024-03-20 00:24:48,266] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:24:48,276] {logging_mixin.py:109} INFO - [2024-03-20 00:24:48,276] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2024-03-19T05:24:48.276382+00:00
+[2024-03-20 00:24:48,284] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py took 0.070 seconds
+[2024-03-20 00:32:02,463] {processor.py:163} INFO - Started process (PID=58975) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:32:02,464] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2024-03-20 00:32:02,464] {logging_mixin.py:109} INFO - [2024-03-20 00:32:02,464] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:32:02,497] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 00:32:02,515] {logging_mixin.py:109} INFO - [2024-03-20 00:32:02,514] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:32:02,525] {logging_mixin.py:109} INFO - [2024-03-20 00:32:02,525] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2024-03-19T05:32:02.525454+00:00
+[2024-03-20 00:32:02,533] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py took 0.070 seconds
+[2024-03-20 07:51:58,966] {processor.py:163} INFO - Started process (PID=99183) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 07:51:58,967] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2024-03-20 07:51:58,967] {logging_mixin.py:109} INFO - [2024-03-20 07:51:58,967] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 07:51:58,989] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 07:51:58,999] {logging_mixin.py:109} INFO - [2024-03-20 07:51:58,999] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 07:51:59,005] {logging_mixin.py:109} INFO - [2024-03-20 07:51:59,005] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2024-03-19T12:51:59.005718+00:00
+[2024-03-20 07:51:59,010] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py took 0.045 seconds
+[2024-03-20 07:58:26,955] {processor.py:163} INFO - Started process (PID=10707) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 07:58:26,956] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2024-03-20 07:58:26,956] {logging_mixin.py:109} INFO - [2024-03-20 07:58:26,956] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 07:58:26,984] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 07:58:26,997] {logging_mixin.py:109} INFO - [2024-03-20 07:58:26,997] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 07:58:27,004] {logging_mixin.py:109} INFO - [2024-03-20 07:58:27,004] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2024-03-19T12:58:27.004302+00:00
+[2024-03-20 07:58:27,012] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py took 0.058 seconds
+[2024-03-20 08:08:20,836] {processor.py:163} INFO - Started process (PID=27155) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 08:08:20,836] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2024-03-20 08:08:20,837] {logging_mixin.py:109} INFO - [2024-03-20 08:08:20,837] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 08:08:20,860] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py
+[2024-03-20 08:08:20,872] {logging_mixin.py:109} INFO - [2024-03-20 08:08:20,872] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 08:08:20,879] {logging_mixin.py:109} INFO - [2024-03-20 08:08:20,879] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2024-03-19T13:08:20.879632+00:00
+[2024-03-20 08:08:20,885] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/tutorial.py took 0.049 seconds

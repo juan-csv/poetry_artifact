@@ -1,0 +1,28 @@
+[2024-03-19 08:36:50,937] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.make_training scheduled__2024-03-19T08:28:47.465166+00:00 [queued]>
+[2024-03-19 08:36:50,996] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.make_training scheduled__2024-03-19T08:28:47.465166+00:00 [queued]>
+[2024-03-19 08:36:50,996] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-19 08:36:50,997] {taskinstance.py:1239} INFO - Starting attempt 1 of 4
+[2024-03-19 08:36:50,997] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-19 08:36:51,005] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): make_training> on 2024-03-19 08:28:47.465166+00:00
+[2024-03-19 08:36:51,011] {standard_task_runner.py:52} INFO - Started process 79610 to run task
+[2024-03-19 08:36:51,017] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'make_training', 'scheduled__2024-03-19T08:28:47.465166+00:00', '--job-id', '473', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpa8pn9bdh', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpw7_wwq7i']
+[2024-03-19 08:36:51,020] {standard_task_runner.py:77} INFO - Job 473: Subtask make_training
+[2024-03-19 08:36:51,058] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.make_training scheduled__2024-03-19T08:28:47.465166+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2024-03-19 08:36:51,085] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=make_training
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-19T08:28:47.465166+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-19T08:28:47.465166+00:00
+[2024-03-19 08:36:51,086] {training.py:31} INFO - Get training data for xgboost model ...
+[2024-03-19 08:36:54,887] {training.py:41} INFO - Training xgboost model.
+[2024-03-19 08:36:54,896] {logging_mixin.py:109} WARNING - /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/xgboost/sklearn.py:1395 UserWarning: `use_label_encoder` is deprecated in 1.7.0.
+[2024-03-19 08:36:55,194] {training.py:89} INFO - Model saved at /Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/artifacts/model.pkl
+[2024-03-19 08:36:55,195] {training.py:62} INFO - Saving xgboost model to artifacts/model.pkl ...
+[2024-03-19 08:36:57,450] {logging_mixin.py:109} INFO - File: /Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/artifacts/model.pkl upload to artifacts/model.pkl.
+[2024-03-19 08:36:57,451] {python.py:175} INFO - Done. Returned value was: True
+[2024-03-19 08:36:57,462] {taskinstance.py:1267} INFO - Marking task as SUCCESS. dag_id=dag_ml_life_cycle, task_id=make_training, execution_date=20240319T082847, start_date=20240319T133650, end_date=20240319T133657
+[2024-03-19 08:36:57,508] {local_task_job.py:154} INFO - Task exited with return code 0
+[2024-03-19 08:36:57,529] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

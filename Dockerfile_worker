@@ -1,0 +1,16 @@
+# Use the official Apache Airflow image as a parent image
+FROM apache/airflow:2.6.3
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install any needed packages specified in requirements.txt
+COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+
+# set ptython path with airflow/dags/lifecycle_ml_example/
+RUN export PYTHONPATH="airflow/dags/lifecycle_ml_example/"
+
+

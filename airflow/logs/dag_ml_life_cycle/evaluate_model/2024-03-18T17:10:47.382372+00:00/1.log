@@ -1,0 +1,136 @@
+[2024-03-18 17:25:34,212] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-18T17:10:47.382372+00:00 [queued]>
+[2024-03-18 17:25:34,272] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-18T17:10:47.382372+00:00 [queued]>
+[2024-03-18 17:25:34,272] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-18 17:25:34,272] {taskinstance.py:1239} INFO - Starting attempt 1 of 4
+[2024-03-18 17:25:34,272] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-18 17:25:34,281] {taskinstance.py:1259} INFO - Executing <Task(_PythonDecoratedOperator): evaluate_model> on 2024-03-18 17:10:47.382372+00:00
+[2024-03-18 17:25:34,287] {standard_task_runner.py:52} INFO - Started process 32366 to run task
+[2024-03-18 17:25:34,293] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'evaluate_model', 'scheduled__2024-03-18T17:10:47.382372+00:00', '--job-id', '145', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmp6ugq4qyn', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmp3wdqu0qi']
+[2024-03-18 17:25:34,295] {standard_task_runner.py:77} INFO - Job 145: Subtask evaluate_model
+[2024-03-18 17:25:34,334] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-18T17:10:47.382372+00:00 [running]> on host macbook-pro-2.local
+[2024-03-18 17:25:34,361] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=evaluate_model
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-18T17:10:47.382372+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-18T17:10:47.382372+00:00
+[2024-03-18 17:25:34,362] {dag_ml_life_cycle.py:93} INFO - Getting gold data from ml_lifecycle_airflow/in-vehicle-coupon-recommendation_gold.csv ...
+[2024-03-18 17:25:41,731] {dag_ml_life_cycle.py:105} INFO - Downloading model from ml_lifecycle_airflow/artifacts/model.pkl ...
+[2024-03-18 17:25:43,609] {logging_mixin.py:109} INFO - File artifacts/model.pkl downloaded in /tmp/model.pkl.
+[2024-03-18 17:25:43,617] {training.py:111} INFO - Model loaded from /tmp/model.pkl
+[2024-03-18 17:25:43,618] {dag_ml_life_cycle.py:112} INFO - Evaluating model ...
+[2024-03-18 17:25:43,695] {logging_mixin.py:109} INFO - accuracy (test): 0.7425323817076395
+[2024-03-18 17:25:43,695] {logging_mixin.py:109} INFO - precision (test): 0.7490297542043984
+[2024-03-18 17:25:43,696] {logging_mixin.py:109} INFO - recall (test): 0.8158759981211836
+[2024-03-18 17:25:43,696] {logging_mixin.py:109} INFO - roc-auc (train-proba): 0.9961175563723904
+[2024-03-18 17:25:43,696] {logging_mixin.py:109} INFO - roc-auc (test-proba): 0.8127045016053429
+[2024-03-18 17:25:43,698] {dag_ml_life_cycle.py:119} INFO - Uploading metrics to ml_lifecycle_airflow/in-vehicle-coupon-recommendation_gold.csv ...
+[2024-03-18 17:25:44,349] {local_task_job.py:191} WARNING - The recorded hostname macbook-pro-2.local does not match this instance's hostname 1.0.0.127.in-addr.arpa
+[2024-03-18 17:25:44,360] {process_utils.py:120} INFO - Sending Signals.SIGTERM to group 32366. PIDs of all processes in the group: [32695, 32366]
+[2024-03-18 17:25:44,360] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 32366
+[2024-03-18 17:25:44,360] {taskinstance.py:1408} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-03-18 17:25:44,361] {process_utils.py:70} INFO - Process psutil.Process(pid=32695, status='terminated', started='17:25:44') (32695) terminated with exit code None
+[2024-03-18 17:25:44,367] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/decorators/base.py", line 134, in execute
+    return_value = super().execute(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/dags/dag_ml_life_cycle.py", line 120, in evaluate_model_task
+    upload_df_to_gcs(
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/utils/f_gcs_storage.py", line 25, in upload_df_to_gcs
+    storage_client = storage.Client()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/client.py", line 226, in __init__
+    super(Client, self).__init__(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 321, in __init__
+    Client.__init__(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 178, in __init__
+    credentials, _ = google.auth.default(scopes=scopes)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_default.py", line 657, in default
+    credentials, project_id = checker()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_default.py", line 651, in <lambda>
+    lambda: _get_gcloud_sdk_credentials(quota_project_id=quota_project_id),
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_default.py", line 242, in _get_gcloud_sdk_credentials
+    project_id = _cloud_sdk.get_project_id()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_cloud_sdk.py", line 106, in get_project_id
+    project = _run_subprocess_ignore_stderr(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_cloud_sdk.py", line 88, in _run_subprocess_ignore_stderr
+    output = subprocess.check_output(command, stderr=devnull)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/subprocess.py", line 1121, in communicate
+    stdout = self.stdout.read()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1410, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-03-18 17:25:44,372] {taskinstance.py:1267} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_ml_life_cycle, task_id=evaluate_model, execution_date=20240318T171047, start_date=20240318T222534, end_date=20240318T222544
+[2024-03-18 17:25:44,380] {standard_task_runner.py:89} ERROR - Failed to execute job 145 for task evaluate_model
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 180, in _run_raw_task
+    ti._run_raw_task(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/decorators/base.py", line 134, in execute
+    return_value = super().execute(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/dags/dag_ml_life_cycle.py", line 120, in evaluate_model_task
+    upload_df_to_gcs(
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/utils/f_gcs_storage.py", line 25, in upload_df_to_gcs
+    storage_client = storage.Client()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/client.py", line 226, in __init__
+    super(Client, self).__init__(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 321, in __init__
+    Client.__init__(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 178, in __init__
+    credentials, _ = google.auth.default(scopes=scopes)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_default.py", line 657, in default
+    credentials, project_id = checker()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_default.py", line 651, in <lambda>
+    lambda: _get_gcloud_sdk_credentials(quota_project_id=quota_project_id),
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_default.py", line 242, in _get_gcloud_sdk_credentials
+    project_id = _cloud_sdk.get_project_id()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_cloud_sdk.py", line 106, in get_project_id
+    project = _run_subprocess_ignore_stderr(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/_cloud_sdk.py", line 88, in _run_subprocess_ignore_stderr
+    output = subprocess.check_output(command, stderr=devnull)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/subprocess.py", line 1121, in communicate
+    stdout = self.stdout.read()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1410, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-03-18 17:25:44,393] {process_utils.py:70} INFO - Process psutil.Process(pid=32366, status='terminated', exitcode=1, started='17:25:34') (32366) terminated with exit code 1

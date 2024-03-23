@@ -1,0 +1,9 @@
+category_encoders==2.6.3
+numpy
+pandas
+protobuf
+pydantic==1.10.12
+PyYAML==6.0.1
+scikit_learn
+xgboost
+apache-airflow-providers-docker

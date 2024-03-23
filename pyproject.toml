@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "airflow"
+version = "0.1.0"
+description = "testing poetry"
+authors = ["Juan Camilo López Montes <143542016+juanlopez10pearls@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+xgboost = "^2.0.3"
+category-encoders = "2.6.3"
+numpy = "^1.26.4"
+pandas = "^2.2.1"
+protobuf = "^5.26.0"
+pydantic = "1.10.12"
+pyyaml = "6.0.1"
+scikit-learn = "^1.4.1.post1"
+apache-airflow-providers-docker = "^3.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,66 @@
+[2024-03-12 15:40:21,086] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.make_training scheduled__2024-03-11T20:35:23.247892+00:00 [queued]>
+[2024-03-12 15:40:21,233] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.make_training scheduled__2024-03-11T20:35:23.247892+00:00 [queued]>
+[2024-03-12 15:40:21,234] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-12 15:40:21,234] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2024-03-12 15:40:21,234] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-12 15:40:21,247] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): make_training> on 2024-03-11 20:35:23.247892+00:00
+[2024-03-12 15:40:21,257] {standard_task_runner.py:52} INFO - Started process 10908 to run task
+[2024-03-12 15:40:21,266] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'make_training', 'scheduled__2024-03-11T20:35:23.247892+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpp1gnt45_', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmprwo5d7ve']
+[2024-03-12 15:40:21,269] {standard_task_runner.py:77} INFO - Job 7: Subtask make_training
+[2024-03-12 15:40:21,322] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.make_training scheduled__2024-03-11T20:35:23.247892+00:00 [running]> on host 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
+[2024-03-12 15:40:21,359] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=make_training
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-11T20:35:23.247892+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-11T20:35:23.247892+00:00
+[2024-03-12 15:40:21,360] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/models/training.py", line 30, in make_training
+    logger.info(f"Get training data for {model_name} model ...")
+UnboundLocalError: local variable 'model_name' referenced before assignment
+[2024-03-12 15:40:21,372] {taskinstance.py:1267} INFO - Marking task as FAILED. dag_id=dag_ml_life_cycle, task_id=make_training, execution_date=20240311T203523, start_date=20240312T204021, end_date=20240312T204021
+[2024-03-12 15:40:21,381] {standard_task_runner.py:89} ERROR - Failed to execute job 7 for task make_training
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 180, in _run_raw_task
+    ti._run_raw_task(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/models/training.py", line 30, in make_training
+    logger.info(f"Get training data for {model_name} model ...")
+UnboundLocalError: local variable 'model_name' referenced before assignment
+[2024-03-12 15:40:21,404] {local_task_job.py:154} INFO - Task exited with return code 1
+[2024-03-12 15:40:21,428] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

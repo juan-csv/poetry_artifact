@@ -1,0 +1,247 @@
+[2024-03-12 15:32:06,570] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.get_gold_data manual__2024-03-12T20:32:00.911308+00:00 [queued]>
+[2024-03-12 15:32:06,577] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.get_gold_data manual__2024-03-12T20:32:00.911308+00:00 [queued]>
+[2024-03-12 15:32:06,577] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-12 15:32:06,577] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2024-03-12 15:32:06,577] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-12 15:32:06,585] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): get_gold_data> on 2024-03-12 20:32:00.911308+00:00
+[2024-03-12 15:32:06,592] {standard_task_runner.py:52} INFO - Started process 80306 to run task
+[2024-03-12 15:32:06,600] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'get_gold_data', 'manual__2024-03-12T20:32:00.911308+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmp_e_nbaau', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmp7ow38tl8']
+[2024-03-12 15:32:06,603] {standard_task_runner.py:77} INFO - Job 12: Subtask get_gold_data
+[2024-03-12 15:32:06,657] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.get_gold_data manual__2024-03-12T20:32:00.911308+00:00 [running]> on host 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
+[2024-03-12 15:32:06,696] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=get_gold_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-12T20:32:00.911308+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-03-12T20:32:00.911308+00:00
+[2024-03-12 15:32:06,698] {data_preprocessing.py:29} INFO - Getting gold data
+[2024-03-12 15:32:06,699] {data_preprocessing.py:33} INFO - Getting raw data from ml_lifecycle_airflow/in-vehicle-coupon-recommendation.csv ...
+[2024-03-12 15:32:09,332] {connectionpool.py:780} WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96cc58e0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /token
+[2024-03-12 15:32:09,333] {connectionpool.py:780} WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce2070>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /token
+[2024-03-12 15:32:09,335] {connectionpool.py:780} WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce2220>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /token
+[2024-03-12 15:32:09,336] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    conn = self._new_conn()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 186, in __call__
+    response = self.session.request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/features/data_preprocessing.py", line 34, in get_gold_data
+    df = get_blob_as_dataframe(bucket_name, path_raw_data)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/utils/f_gcs_storage.py", line 97, in get_blob_as_dataframe
+    blob_content = blob.download_as_string()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1540, in download_as_string
+    return self.download_as_bytes(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1425, in download_as_bytes
+    self._prep_and_do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 4352, in _prep_and_do_download
+    self._do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1007, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 237, in consume
+    return _request_helpers.wait_and_retry(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 210, in retriable_request
+    result = transport.request(method, url, **request_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 537, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 230, in before_request
+    self._blocking_refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 193, in _blocking_refresh
+    self.refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/credentials.py", line 431, in refresh
+    ) = reauth.refresh_grant(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/reauth.py", line 332, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 215, in _token_endpoint_request_no_throw
+    request_succeeded, response_data, retryable_error = _perform_request()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 191, in _perform_request
+    response = request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[2024-03-12 15:32:09,366] {taskinstance.py:1267} INFO - Marking task as FAILED. dag_id=dag_ml_life_cycle, task_id=get_gold_data, execution_date=20240312T203200, start_date=20240312T203206, end_date=20240312T203209
+[2024-03-12 15:32:09,375] {standard_task_runner.py:89} ERROR - Failed to execute job 12 for task get_gold_data
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    conn = self._new_conn()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 186, in __call__
+    response = self.session.request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 180, in _run_raw_task
+    ti._run_raw_task(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/features/data_preprocessing.py", line 34, in get_gold_data
+    df = get_blob_as_dataframe(bucket_name, path_raw_data)
+  File "/Users/macbook/Desktop/airflow_tutorial/airflow/dags/lifecycle_ml_example/src/utils/f_gcs_storage.py", line 97, in get_blob_as_dataframe
+    blob_content = blob.download_as_string()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1540, in download_as_string
+    return self.download_as_bytes(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1425, in download_as_bytes
+    self._prep_and_do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 4352, in _prep_and_do_download
+    self._do_download(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/cloud/storage/blob.py", line 1007, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 237, in consume
+    return _request_helpers.wait_and_retry(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/resumable_media/requests/download.py", line 210, in retriable_request
+    result = transport.request(method, url, **request_kwargs)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 537, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 230, in before_request
+    self._blocking_refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/credentials.py", line 193, in _blocking_refresh
+    self.refresh(request)
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/credentials.py", line 431, in refresh
+    ) = reauth.refresh_grant(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/reauth.py", line 332, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 215, in _token_endpoint_request_no_throw
+    request_succeeded, response_data, retryable_error = _perform_request()
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/oauth2/_client.py", line 191, in _perform_request
+    response = request(
+  File "/Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/google/auth/transport/requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbd96ce23d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[2024-03-12 15:32:09,392] {local_task_job.py:154} INFO - Task exited with return code 1
+[2024-03-12 15:32:09,409] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

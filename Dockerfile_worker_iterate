@@ -1,0 +1,8 @@
+# Use the official Apache Airflow image as a parent image
+FROM airflow_base
+
+
+
+COPY . .
+RUN export PYTHONPATH="airflow/dags/lifecycle_ml_example/"
+

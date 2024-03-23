@@ -1,0 +1,35 @@
+[2024-03-20 00:16:58,146] {processor.py:163} INFO - Started process (PID=35596) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:16:58,147] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2024-03-20 00:16:58,147] {logging_mixin.py:109} INFO - [2024-03-20 00:16:58,147] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:16:58,191] {processor.py:654} INFO - DAG(s) dict_keys(['example_task_group']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:16:58,211] {logging_mixin.py:109} INFO - [2024-03-20 00:16:58,211] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:16:58,222] {logging_mixin.py:109} INFO - [2024-03-20 00:16:58,222] {dag.py:2935} INFO - Setting next_dagrun for example_task_group to 2024-03-19T05:16:58.222437+00:00
+[2024-03-20 00:16:58,230] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py took 0.084 seconds
+[2024-03-20 00:25:29,894] {processor.py:163} INFO - Started process (PID=48728) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:25:29,894] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2024-03-20 00:25:29,895] {logging_mixin.py:109} INFO - [2024-03-20 00:25:29,895] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:25:29,930] {processor.py:654} INFO - DAG(s) dict_keys(['example_task_group']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:25:29,950] {logging_mixin.py:109} INFO - [2024-03-20 00:25:29,949] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:25:29,960] {logging_mixin.py:109} INFO - [2024-03-20 00:25:29,960] {dag.py:2935} INFO - Setting next_dagrun for example_task_group to 2024-03-19T05:25:29.959939+00:00
+[2024-03-20 00:25:29,971] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py took 0.078 seconds
+[2024-03-20 00:34:15,900] {processor.py:163} INFO - Started process (PID=60650) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:34:15,901] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2024-03-20 00:34:15,901] {logging_mixin.py:109} INFO - [2024-03-20 00:34:15,901] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:34:15,936] {processor.py:654} INFO - DAG(s) dict_keys(['example_task_group']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 00:34:15,955] {logging_mixin.py:109} INFO - [2024-03-20 00:34:15,954] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:34:15,965] {logging_mixin.py:109} INFO - [2024-03-20 00:34:15,964] {dag.py:2935} INFO - Setting next_dagrun for example_task_group to 2024-03-19T05:34:15.964809+00:00
+[2024-03-20 00:34:15,973] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py took 0.073 seconds
+[2024-03-20 07:58:45,550] {processor.py:163} INFO - Started process (PID=11156) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 07:58:45,551] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2024-03-20 07:58:45,551] {logging_mixin.py:109} INFO - [2024-03-20 07:58:45,551] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 07:58:45,577] {processor.py:654} INFO - DAG(s) dict_keys(['example_task_group']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 07:58:45,590] {logging_mixin.py:109} INFO - [2024-03-20 07:58:45,590] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 07:58:45,597] {logging_mixin.py:109} INFO - [2024-03-20 07:58:45,597] {dag.py:2935} INFO - Setting next_dagrun for example_task_group to 2024-03-19T12:58:45.597576+00:00
+[2024-03-20 07:58:45,603] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py took 0.054 seconds
+[2024-03-20 08:08:42,712] {processor.py:163} INFO - Started process (PID=27670) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 08:08:42,712] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2024-03-20 08:08:42,713] {logging_mixin.py:109} INFO - [2024-03-20 08:08:42,713] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 08:08:42,735] {processor.py:654} INFO - DAG(s) dict_keys(['example_task_group']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py
+[2024-03-20 08:08:42,747] {logging_mixin.py:109} INFO - [2024-03-20 08:08:42,747] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 08:08:42,753] {logging_mixin.py:109} INFO - [2024-03-20 08:08:42,753] {dag.py:2935} INFO - Setting next_dagrun for example_task_group to 2024-03-19T13:08:42.753244+00:00
+[2024-03-20 08:08:42,759] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_task_group.py took 0.047 seconds

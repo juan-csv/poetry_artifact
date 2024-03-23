@@ -1,0 +1,35 @@
+[2024-03-20 00:15:55,550] {processor.py:163} INFO - Started process (PID=34039) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:15:55,551] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2024-03-20 00:15:55,551] {logging_mixin.py:109} INFO - [2024-03-20 00:15:55,551] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:15:55,600] {processor.py:654} INFO - DAG(s) dict_keys(['example_trigger_target_dag']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:15:55,618] {logging_mixin.py:109} INFO - [2024-03-20 00:15:55,618] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:15:55,627] {logging_mixin.py:109} INFO - [2024-03-20 00:15:55,627] {dag.py:2935} INFO - Setting next_dagrun for example_trigger_target_dag to None
+[2024-03-20 00:15:55,634] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.085 seconds
+[2024-03-20 00:25:16,516] {processor.py:163} INFO - Started process (PID=48432) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:25:16,516] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2024-03-20 00:25:16,517] {logging_mixin.py:109} INFO - [2024-03-20 00:25:16,517] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:25:16,565] {processor.py:654} INFO - DAG(s) dict_keys(['example_trigger_target_dag']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:25:16,583] {logging_mixin.py:109} INFO - [2024-03-20 00:25:16,582] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:25:16,592] {logging_mixin.py:109} INFO - [2024-03-20 00:25:16,592] {dag.py:2935} INFO - Setting next_dagrun for example_trigger_target_dag to None
+[2024-03-20 00:25:16,599] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.084 seconds
+[2024-03-20 00:34:00,908] {processor.py:163} INFO - Started process (PID=60326) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:34:00,908] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2024-03-20 00:34:00,909] {logging_mixin.py:109} INFO - [2024-03-20 00:34:00,909] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:34:00,961] {processor.py:654} INFO - DAG(s) dict_keys(['example_trigger_target_dag']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 00:34:00,979] {logging_mixin.py:109} INFO - [2024-03-20 00:34:00,979] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 00:34:00,988] {logging_mixin.py:109} INFO - [2024-03-20 00:34:00,988] {dag.py:2935} INFO - Setting next_dagrun for example_trigger_target_dag to None
+[2024-03-20 00:34:00,996] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.089 seconds
+[2024-03-20 07:58:33,731] {processor.py:163} INFO - Started process (PID=10890) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 07:58:33,732] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2024-03-20 07:58:33,732] {logging_mixin.py:109} INFO - [2024-03-20 07:58:33,732] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 07:58:33,762] {processor.py:654} INFO - DAG(s) dict_keys(['example_trigger_target_dag']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 07:58:33,775] {logging_mixin.py:109} INFO - [2024-03-20 07:58:33,775] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 07:58:33,780] {logging_mixin.py:109} INFO - [2024-03-20 07:58:33,780] {dag.py:2935} INFO - Setting next_dagrun for example_trigger_target_dag to None
+[2024-03-20 07:58:33,788] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.057 seconds
+[2024-03-20 08:08:32,596] {processor.py:163} INFO - Started process (PID=27426) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 08:08:32,596] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2024-03-20 08:08:32,597] {logging_mixin.py:109} INFO - [2024-03-20 08:08:32,597] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 08:08:32,630] {processor.py:654} INFO - DAG(s) dict_keys(['example_trigger_target_dag']) retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-03-20 08:08:32,644] {logging_mixin.py:109} INFO - [2024-03-20 08:08:32,644] {dag.py:2396} INFO - Sync 1 DAGs
+[2024-03-20 08:08:32,650] {logging_mixin.py:109} INFO - [2024-03-20 08:08:32,650] {dag.py:2935} INFO - Setting next_dagrun for example_trigger_target_dag to None
+[2024-03-20 08:08:32,656] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.060 seconds

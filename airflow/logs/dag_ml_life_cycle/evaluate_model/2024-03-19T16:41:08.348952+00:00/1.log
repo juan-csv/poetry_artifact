@@ -1,0 +1,33 @@
+[2024-03-19 16:48:29,636] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-19T16:41:08.348952+00:00 [queued]>
+[2024-03-19 16:48:29,702] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-19T16:41:08.348952+00:00 [queued]>
+[2024-03-19 16:48:29,703] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-19 16:48:29,703] {taskinstance.py:1239} INFO - Starting attempt 1 of 4
+[2024-03-19 16:48:29,703] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-19 16:48:29,710] {taskinstance.py:1259} INFO - Executing <Task(_PythonDecoratedOperator): evaluate_model> on 2024-03-19 16:41:08.348952+00:00
+[2024-03-19 16:48:29,716] {standard_task_runner.py:52} INFO - Started process 59866 to run task
+[2024-03-19 16:48:29,722] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_ml_life_cycle', 'evaluate_model', 'scheduled__2024-03-19T16:41:08.348952+00:00', '--job-id', '878', '--raw', '--subdir', 'DAGS_FOLDER/lifecycle_ml_example/dags/dag_ml_life_cycle.py', '--cfg-path', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpkpc_r4be', '--error-file', '/var/folders/t4/c2kdpvnj6r793w3k056dkc640000gp/T/tmpaaaw4pq2']
+[2024-03-19 16:48:29,725] {standard_task_runner.py:77} INFO - Job 878: Subtask evaluate_model
+[2024-03-19 16:48:29,772] {logging_mixin.py:109} INFO - Running <TaskInstance: dag_ml_life_cycle.evaluate_model scheduled__2024-03-19T16:41:08.348952+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2024-03-19 16:48:29,803] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dag_ml_life_cycle
+AIRFLOW_CTX_TASK_ID=evaluate_model
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-19T16:41:08.348952+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-03-19T16:41:08.348952+00:00
+[2024-03-19 16:48:29,804] {dag_ml_life_cycle.py:93} INFO - Getting gold data from ml_lifecycle_airflow/in-vehicle-coupon-recommendation_gold.csv ...
+[2024-03-19 16:48:37,978] {dag_ml_life_cycle.py:105} INFO - Downloading model from ml_lifecycle_airflow/artifacts/model.pkl ...
+[2024-03-19 16:48:40,293] {logging_mixin.py:109} INFO - File artifacts/model.pkl downloaded in /tmp/model.pkl.
+[2024-03-19 16:48:40,300] {training.py:111} INFO - Model loaded from /tmp/model.pkl
+[2024-03-19 16:48:40,300] {dag_ml_life_cycle.py:112} INFO - Evaluating model ...
+[2024-03-19 16:48:40,385] {logging_mixin.py:109} INFO - accuracy (test): 0.7425323817076395
+[2024-03-19 16:48:40,385] {logging_mixin.py:109} INFO - precision (test): 0.7490297542043984
+[2024-03-19 16:48:40,385] {logging_mixin.py:109} INFO - recall (test): 0.8158759981211836
+[2024-03-19 16:48:40,386] {logging_mixin.py:109} INFO - roc-auc (train-proba): 0.9961175563723904
+[2024-03-19 16:48:40,386] {logging_mixin.py:109} INFO - roc-auc (test-proba): 0.8127045016053429
+[2024-03-19 16:48:40,388] {dag_ml_life_cycle.py:119} INFO - Uploading metrics to ml_lifecycle_airflow/in-vehicle-coupon-recommendation_gold.csv ...
+[2024-03-19 16:48:42,568] {python.py:175} INFO - Done. Returned value was: None
+[2024-03-19 16:48:42,578] {taskinstance.py:1267} INFO - Marking task as SUCCESS. dag_id=dag_ml_life_cycle, task_id=evaluate_model, execution_date=20240319T164108, start_date=20240319T214829, end_date=20240319T214842
+[2024-03-19 16:48:42,620] {local_task_job.py:154} INFO - Task exited with return code 0
+[2024-03-19 16:48:42,638] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
