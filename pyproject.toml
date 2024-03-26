@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "testing poetry"
 authors = ["Juan Camilo López Montes <143542016+juanlopez10pearls@users.noreply.github.com>"]
 readme = "README.md"
+packages = [
+    { include = "lifecycle_ml_example", from = "airflow/dags"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
