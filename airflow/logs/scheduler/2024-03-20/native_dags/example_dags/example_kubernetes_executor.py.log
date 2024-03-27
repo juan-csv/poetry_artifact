@@ -1,6 +1,0 @@
-[2024-03-20 07:59:08,678] {processor.py:163} INFO - Started process (PID=11720) to work on /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_kubernetes_executor.py
-[2024-03-20 07:59:08,678] {processor.py:642} INFO - Processing file /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_kubernetes_executor.py for tasks to queue
-[2024-03-20 07:59:08,678] {logging_mixin.py:109} INFO - [2024-03-20 07:59:08,678] {dagbag.py:500} INFO - Filling up the DagBag from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_kubernetes_executor.py
-[2024-03-20 07:59:08,691] {logging_mixin.py:109} INFO - [2024-03-20 07:59:08,691] {example_kubernetes_executor.py:38} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
-[2024-03-20 07:59:08,708] {processor.py:656} WARNING - No viable dags retrieved from /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_kubernetes_executor.py
-[2024-03-20 07:59:08,709] {processor.py:171} INFO - Processing /Users/macbook/anaconda3/envs/airflow_env/lib/python3.9/site-packages/airflow/example_dags/example_kubernetes_executor.py took 0.032 seconds
